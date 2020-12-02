@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/font-awesome.min.css" />
+    <title>Church</title>
+  </head>
+  <body class="bg-white font-sans leading-normal tracking-normal">
+    <div class="w-full antialiased">
+      <div class="bg-black">
+        <div class="px-16 mx-16 md:pl-10">
+          <div
+            class="flex justify-between flex-no-wrap sm:flex-wrap md:flex-wrap"
+          >
+            <ul class="flex pt-4">
+              <p class="text-yellow-500">Next Big Event:</p>
+              <li id="countdown" class="text-gray-500 pl-4"></li>
+            </ul>
+            <div
+              class="bg-purple-700 w-40 h-16 text-center p-4 text-white hover:bg-white hover:text-black"
+            >
+              <button>Send Donation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header h-24 pt-4">
+        <header
+          class="lg:px-32: md:pl-16 mx-10 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2 font-light"
+        >
+          <div class="flex-1 flex justify-between items-center">
+            <a href="#">
+              <span class="text-3xl font-thin">Believe</span>
+              <img
+                class="float-right pl-3 pt-2"
+                src="./assets/img/logo.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+            <svg
+              class="fill-current text-gray-900"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox=" 0 0 20 20"
+            >
+              <titile>menu></titile>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </label>
+          <input type="checkbox" class="hidden" id="menu-toggle" />
+          <div
+            class="hidden lg:flex lg:items-center lg:w-auto w-full"
+            id="menu"
+          >
+            <nav id="header">
+              <ul
+                class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 lg:pr-16 sm:pr-0"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#ministries"
+                    class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                    >Ministries</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#sermons"
+                    class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                    >Sermons</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#blog"
+                    class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                    >Blog</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="#contact"
+                    class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                    >Contact</a
+                  >
+                </li>
+
+                <li>
+                  <div class="dropdown inline-block relative">
+                    <div
+                      id="search-toggle"
+                      class="search-icon cursor-pointer pl-6"
+                    >
+                      <svg
+                        class="fill-current pointer-events-none text-grey-darkest w-4 h-4 inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <div
+                      class="dropdown-menu absolute hidden text-gray-700 pt-1"
+                    >
+                      <a
+                        class="bg-gray-200 py-2 px-4 block whitespace-no-wrap"
+                        href="#"
+                        >One</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </div>
+
+      <section class="w-full">
+        <div class="h-full w-full">
+          <!-- Additional required wrapper -->
+          <div class="slider-wrapper">
+            <!-- Slides -->
+            <div class="relative slider text-center">
+              <img
+                class="slider-img h-64 w-full object-cover"
+                id="sliderimg"
+                src="assets/img/home_slider_background.jpg"
+              />
+              <div
+                class="content absolute text-white px-2 py-4 inset-x-0 top-0"
+              >
+                <div
+                  class="bg-purple-700 rounded-full h-24 w-24 flex items-center justify-center mx-auto my-8"
+                >
+                  <img src="./assets/img/cross_1.png" alt="" />
+                </div>
+                <h1
+                  class="text-base sm:text-4xl md:text-xl lg:text-6xl xl:text-6xl font-bold banner-text"
+                >
+                  God is God! God Is No Man!!!!!!!!!
+                </h1>
+                <button
+                  class="bg-purple-700 w-40 h-16 text-center p-4 text-white hover:bg-opacity-50 hover:text-white border-b-2 border-yellow-500 mt-8"
+                >
+                  come & join us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lg:px-32 px-6 mb-20">
+        <div class="text-center">
+          <div class="pt-20 pb-4">
+            <img class="mx-auto my-0" src="./assets/img/church_1.png" alt="" />
+          </div>
+          <div class="section_title lg:text-5xl text-4xl">
+            <h2>Welcome to Our Church</h2>
+          </div>
+          <div class="section_subtitle -mt-2 text-gray-400 text-base">
+            God loves us all
+          </div>
+        </div>
+        <div class="container m-auto text-grey-darkest">
+          <div class="flex flex-wrap -mx-2 mt-20">
+            <div class="w-full md:w-full lg:w-1/2 mb-4">
+              <p class="font-medium text-sm leading-6">
+                Integer nec bibendum lacus. Suspendisse dictum enim sit amet
+                libero malesuada feugiat. Praesent malesuada congue magna at
+                finibus. In hac habitasse platea dictumst. Curabitur rhoncus
+                auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu
+                varius ac. Etiam cursus turpis lectus, id iaculis risus tempor
+                id. Phasellus fringilla nisl sed sem scelerisque, eget aliquam
+                magna vehicula.nteger nec bibendum lacus.
+              </p>
+              <div
+                class="bg-purple-700 w-40 h-16 text-center p-4 text-white hover:bg-opacity-50 hover:text-white border-b-2 border-yellow-500 mt-8"
+              >
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <div class="w-full md:w-full lg:w-1/2 mb-4">
+              <img src="./assets/img/intro.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Activities section -->
+
+      <section>
+        <div
+          class="text-white bg-fixed"
+          style="
+            background-image: url(./assets/img/home_slider5.jpg);
+            width: 100%;
+            height: auto;
+            background-position: center center;
+            background-size: cover;
+          "
+        >
+          <div class="text-center">
+            <div class="pt-20 pb-4">
+              <img
+                class="mx-auto my-0"
+                src="./assets/img/church_2.png"
+                alt=""
+              />
+            </div>
+            <div class="section_title lg:text-5xl text-4xl">
+              <h2>Our Church main activities</h2>
+            </div>
+            <div class="section_subtitle text-base">God loves us all</div>
+          </div>
+          <p class="px-20 py-20 text-center">
+            Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero
+            malesuada feugiat. Praesent malesuada congue magna at finibus. In
+            hac habi tasse platea dictumst. Curabitur rhoncus auctor eleifend.
+            Fusce venenatis diam urna, eu pharetra arcu varius ac.
+          </p>
+
+          <div class="px-20 py-20 flex flex-wrap justify-between align-center">
+            <div class="img">
+              <div class="px-6">
+                <img src="./assets/img/services_1.png" alt="" />
+              </div>
+              <p class="pt-6 text-2xl">Teaching</p>
+            </div>
+            <div class="img">
+              <div class="px-6">
+                <img src="./assets/img/services_4.png" alt="" />
+              </div>
+              <p class="pt-6 text-2xl">Sermons</p>
+            </div>
+
+            <div class="img">
+              <div class="px-6">
+                <img src="./assets/img/services_5.png" alt="" />
+              </div>
+              <p class="pt-6 text-2xl">Daily Mass</p>
+            </div>
+
+            <div class="img">
+              <div class="px-6">
+                <img src="./assets/img/services_6.png" alt="" />
+              </div>
+
+              <p class="pt-6 text-2xl">Daily Prayers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sermon -->
+
+      <section id="sermons" class="bg-blue-100 pb-20">
+        <div
+          class="relative md:h-full w-full"
+          style="
+            background-image: url(./assets/img/sermon.png);
+            width: 100%;
+            height: auto;
+            background-position: center center;
+            background-size: cover;
+          "
+        >
+          <div class="sermon-content">
+            <div class="text-center">
+              <div class="pt-20 pb-4">
+                <img
+                  class="mx-auto my-0"
+                  src="./assets/img/church_1.png"
+                  alt=""
+                />
+              </div>
+              <div class="section_title lg:text-5xl text-4xl">
+                <h2>Today's Sermon</h2>
+              </div>
+              <div class="section_subtitle -mt-2 text-gray-400 text-base">
+                God loves us all
+              </div>
+            </div>
+            <div class="container m-auto px-20 py-4 text-grey-darkest z-20">
+              <div class="flex flex-wrap -mx-2 mt-20">
+                <div class="w-full md:w-full lg:w-1/2 mb-4">
+                  <img src="./assets/img/sermon_image.jpg" alt="" />
+                </div>
+
+                <div class="w-full md:w-full lg:w-1/2 pl-10">
+                  <div class="font-medium text-black text-2xl">
+                    Receive The Holy Spirit By Jesus Christ
+                  </div>
+
+                  <ul class="py-4 leading-10">
+                    <li>
+                      Sermon by:
+                      <a href="#" class="text-purple-900">Priest Jack Smith</a>
+                    </li>
+                    <li>
+                      Categories:
+                      <a href="#" class="text-purple-900">Jesus Christ</a>,
+                      <a href="#" class="text-purple-900">Holy</a>
+                    </li>
+                    <li>
+                      Date:
+                      <a href="#" class="text-purple-900"
+                        >Monday 11 March, 2018</a
+                      >
+                    </li>
+                  </ul>
+                  <p class="font-medium leading-5">
+                    Praesent malesuada congue magna at finibus. In hac habitasse
+                    platea dictumst. Curabitur rhoncus auctor eleifend. Fusce
+                    venenatis diam urna, eu pharetra arcu varius ac. Etiam
+                    cursus turpis lectus, id iaculis risus tempor id. Phasellus
+                    fringilla nisl sed sem scelerisque, eget aliquam magna
+                    vehicula.nteger nec bibendum lacus.
+                  </p>
+                  <div
+                    class="bg-purple-700 w-40 h-16 text-center p-4 text-white hover:bg-opacity-50 hover:text-white border-b-2 border-yellow-500 mt-8"
+                  >
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- slider2 -->
+
+      <section id="ministries" class="w-full">
+        <div class="text-center">
+          <div class="pt-20 pb-4">
+            <img class="mx-auto my-0" src="./assets/img/church_4.png" alt="" />
+          </div>
+          <div class="section_title lg:text-5xl text-4xl">
+            <h2>Our Church's Causes</h2>
+          </div>
+          <div class="section_subtitle -mt-2 text-gray-400 text-base mb-16">
+            God loves us all
+          </div>
+        </div>
+        <!-- first-container -->
+        <div
+          class="px-20 flex justify-between flex-wrap items-center sm:flex-wrap md:flex-wrap lg:flex-no-wrap pb-20 showSlide"
+        >
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6 text-center">
+              Children's Aids
+            </div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">
+              Aids for thr Elderly
+            </div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">Community Food</div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_4.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">After School</div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+          <a class="next" onclick="nextSlide(-1)">❮</a>
+          <a class="prev" onclick="nextSlide(1)">❯</a>
+        </div>
+        <!-- second-container -->
+        <div
+          class="px-20 flex justify-between items-center sm:flex-wrap md:flex-wrap lg:flex-no-wrap pb-20 showSlide"
+        >
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6 text-center">
+              Children's Aids
+            </div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_4.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">After School</div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">
+              Aids for thr Elderly
+            </div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">Community Food</div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+
+          <a class="next" onclick="nextSlide(-1)">❮</a>
+          <a class="prev" onclick="nextSlide(1)">❯</a>
+        </div>
+        <!-- third-container -->
+        <div
+          class="px-20 flex justify-between items-center sm:flex-wrap md:flex-wrap lg:flex-no-wrap pb-20 showSlide"
+        >
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">Community Food</div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_4.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">After School</div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6 text-center">
+              Children's Aids
+            </div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+
+          <div class="causes_item text-center">
+            <div class="cause-image w-56 h-auto ml-10">
+              <img
+                class="rounded-full w-56 h-auto"
+                src="./assets/img/causes_2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="causes_item_title text-3xl mt-6">
+              Aids for thr Elderly
+            </div>
+            <div class="causes_item_text">
+              <p class="font-medium leading-light my-2">
+                Praesent malesuada congue magna at finibus. In hac habitasse
+                platea dictumst.
+              </p>
+            </div>
+          </div>
+          <a class="next" onclick="nextSlide(-1)">❮</a>
+          <a class="prev" onclick="nextSlide(1)">❯</a>
+        </div>
+      </section>
+
+      <!-- quote page -->
+
+      <section>
+        <div
+          class="text-white pb-20"
+          style="
+            background-image: url(./assets/img/quote.jpg);
+            width: 100%;
+            height: auto;
+            background-position: center center;
+            background-size: cover;
+          "
+        >
+          <div class="text-center">
+            <div class="pt-20 pb-4">
+              <img
+                class="mx-auto my-0"
+                src="./assets/img/church_5.png"
+                alt=""
+              />
+            </div>
+            <div class="section_title lg:text-5xl text-4xl">
+              <h2>Quote of the day</h2>
+            </div>
+            <div class="section_subtitle text-base">God loves us all</div>
+          </div>
+          <div class="text-center px-20">
+            <p class="pt-10">"</p>
+            <p class="py-6">
+              Integer nec bibendum lacus. Suspendisse dictum enim sit amet
+              libero malesuada feugiat. Praesent malesuada congue magna at
+              finibus. In hac habi tasse platea dictumst. Curabitur rhoncus
+              auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu
+              varius ac.
+            </p>
+            <p class="pb-16 text-purple-900">Psalm 27:4</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- news -->
+      <section id="blog">
+        <div class="text-center">
+          <div class="pt-20 pb-4">
+            <img class="mx-auto my-0" src="./assets/img/church_6.png" alt="" />
+          </div>
+          <div class="section_title lg:text-5xl text-4xl">
+            <h2>Latest News</h2>
+          </div>
+          <div class="section_subtitle text-base">God loves us all</div>
+        </div>
+        <div class="flex justify-between mx-20 my-20">
+          <div class="news_item px-4">
+            <div class="news_image relative">
+              <img src="./assets/img/news_1.jpg" alt="" />
+              <div
+                class="absolute text-white inset-0 bg-purple-900 w-32 h-24 text-center px-6 py-4"
+              >
+                <div class="font-medium text-3xl">06</div>
+                <div class="text-xs font-thin">August, 2020</div>
+              </div>
+            </div>
+            <div class="news_content">
+              <div class="py-6 text-xl">Latest news in the '18 community</div>
+              <div class="text-gray-900 pb-6">
+                <p>
+                  Praesent malesuada congue magna at finibus. In hac habitasse
+                  platea dic tumst malesuada congue magna at finibus. In hac
+                  habitasse platea.
+                </p>
+              </div>
+              <div class="text-purple-900"><a href="#">Read More</a></div>
+            </div>
+          </div>
+          <div class="news_item px-4">
+            <div class="news_image relative">
+              <img src="./assets/img/news_2.jpg" alt="" />
+              <div
+                class="absolute text-white inset-0 bg-purple-900 w-32 h-24 text-center px-6 py-4"
+              >
+                <div class="font-medium text-3xl">05</div>
+                <div class="text-xs font-thin">August, 2020</div>
+              </div>
+            </div>
+            <div class="news_content">
+              <div class="py-6 text-xl">Help us raise money for the kids</div>
+              <div class="text-gray-900 pb-6">
+                <p>
+                  Praesent malesuada congue magna at finibus. In hac habitasse
+                  platea dic tumst malesuada congue magna at finibus. In hac
+                  habitasse platea.
+                </p>
+              </div>
+              <div class="text-purple-900"><a href="#">Read More</a></div>
+            </div>
+          </div>
+          <div class="news_item px-4">
+            <div class="news_image relative">
+              <img src="./assets/img/news_3.jpg" alt="" />
+              <div
+                class="absolute text-white inset-0 bg-purple-900 w-32 h-24 text-center px-6 py-4"
+              >
+                <div class="font-medium text-3xl">03</div>
+                <div class="text-xs font-thin">August, 2020</div>
+              </div>
+            </div>
+            <div class="news_content">
+              <div class="py-6 text-xl">The best way to pray</div>
+              <div class="text-gray-900 pb-6">
+                <p>
+                  Praesent malesuada congue magna at finibus. In hac habitasse
+                  platea dic tumst malesuada congue magna at finibus. In hac
+                  habitasse platea.
+                </p>
+              </div>
+              <div class="text-purple-900"><a href="#">Read More</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- newsletter -->
+
+      <section class="bg-purple-900 w-full">
+        <div class="flex justify-between py-16 items-center px-20 flex-wrap">
+          <div class="text-4xl text-white">Subscribe to our newsletter</div>
+          <div class="">
+            <form action="#" id="newsletter_form" class="newsletter_form">
+              <input
+                type="email"
+                class="newsletter_input border-b-2 border-yellow-500"
+                placeholder="Your email"
+                required="required"
+              />
+              <button
+                class="bg-black w-40 h-16 text-center text-white hover:bg-opacity-50 hover:text-white border-b-2 border-yellow-500 -ml-1"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+
+      <section id="contact" class="w-full h-full text-white footer-big">
+        <div class="px-20 py-20">
+          <div class="flex justify-between flex-wrap">
+            <div class="col-lg-4 footer_col">
+              <div class="logo_container">
+                <div class="flex-1 flex justify-between items-center">
+                  <a href="#">
+                    <span class="text-5xl font-thin">Believe</span>
+                    <img
+                      class="float-right pl-3 pt-2 w-16"
+                      src="./assets/img/logo.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="logo_subtitle text-gray-600">Church template</div>
+              </div>
+              <div class="footer_social">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-google-plus" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-pinterest" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 footer_col py-10">
+              <div class="footer_links py-6">
+                <div
+                  class="footer_title text-2xl border-b-2 border-yellow-500 absolute"
+                >
+                  Useful Links
+                </div>
+                <div class="flex text-gray-600">
+                  <ul class="mt-20">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Donations</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="#">Causes</a></li>
+                    <li><a href="#">Quotes</a></li>
+                  </ul>
+
+                  <ul class="mt-20 pl-32">
+                    <li><a href="blog.html">News</a></li>
+                    <li><a href="#">Event List</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="#">Priests</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col py-10">
+              <div class="footer_contact py-6">
+                <div
+                  class="footer_title text-2xl border-b-2 border-yellow-500 absolute"
+                >
+                  Contact Us
+                </div>
+                <ul class="mt-20 text-gray-600">
+                  <li>
+                    <span class="text-purple-900">Address: </span>196 Creekside
+                    Lane Avila Ph, Rivers 93424
+                  </li>
+                  <li class="footer_contact_phone">
+                    <span class="text-purple-900">Phone: </span>
+                    <div>
+                      <div>+234 345 7953 32453</div>
+                      <div>+234 345 7557 822112</div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="text-purple-900">Email: </span
+                    >yourmail@gmail.com
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright text-center bg-black py-10 text-gray-600">
+          Copyright ©
+          <script
+            type="text/javascript"
+            async=""
+            src="https://www.google-analytics.com/analytics.js"
+          ></script>
+          <script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script>
+          All rights reserved | This template is made with
+          <i class="fa fa-heart-o" aria-hidden="true"></i> by
+          <a class="text-yellow-500" href="#" target="_blank">T.Nation</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
